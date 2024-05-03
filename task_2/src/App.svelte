@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
+  // Запускаем onMount, генерируем опшины в селект
   let items: string[]=[];
   onMount(async () => {
       await fetch(`https://v6.exchangerate-api.com/v6/fbc77a9a18685c52a9cdbc02/codes`)
@@ -13,16 +14,13 @@
         });
   });
 
+  // Переменные для работы
   let selected:string;
   let selected1:string;
-
   let val:number;
   let val1:number;
 
- 
-
-
-  
+  // Запрос на сервер, и обработка результата 
 
   async function Converter (a:string, b:number){
     let kf:number = 0;
@@ -39,13 +37,7 @@
     } else {
       val = val1/kf
     } 
-
-  }
-
-
-
-
-  
+  }  
 </script>
 
 <main>
